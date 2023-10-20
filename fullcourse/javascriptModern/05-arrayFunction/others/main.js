@@ -81,4 +81,3 @@ let joinedString = arrayOfString.flatMap(s => s.split(" ")).join(" ");
 
 console.log(joinedString);
 */
-
