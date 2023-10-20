@@ -46,9 +46,20 @@ const newPeople = people.filter(person => person.age> 45);
 console.log(newPeople);
 */
 
-//exercice filtrer les nombres pairs
+/*
+*on peux chain comme ici un .map et un .filter (map modifie les valeurs du tableau et filter va filtrer dans le tableau)
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const squaredNumbers = numbers.map(number => number * number).filter(number => number%2 === 0);
+console.log(squaredNumbers)
+*/
 
+/*
+*exercice filtrer les nombres pairs
+*/
+
+/*
 const nombres = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const nombresPairs = nombres.filter(nombre => nombre % 2 === 0);
 
 console.log(nombresPairs);
+*/
