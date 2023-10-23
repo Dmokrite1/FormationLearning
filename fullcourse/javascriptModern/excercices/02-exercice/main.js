@@ -5,6 +5,7 @@ const productPriceInput = document.getElementById("product-price");
 const productQuantityInput = document.getElementById("product-quantity");
 const addProductButton = document.getElementById("add-product");
 
+
 let products = [
     { name: 'Pommes', price: 0.5, quantity: 4 },
     { name: 'Bananes', price: 1, quantity: 2 },
@@ -13,7 +14,7 @@ let products = [
     { name: 'Œufs', price: 5.79, quantity: 1 },
 ];
 
-function calculateTotalPrice() {
+const calculateTotalPrice = () => {
     let total = 0;
     products.forEach(product => {
         total += product.price * product.quantity;
@@ -21,7 +22,7 @@ function calculateTotalPrice() {
     return total;
 }
 
-function displayProducts() {
+const displayProducts = () => {
     productList.innerHTML = "";
 
     products.sort((a, b) => a.price - b.price);
@@ -36,32 +37,53 @@ function displayProducts() {
     totalPriceElement.textContent = total + " €";
 }
 
-function addProduct() {
+const addProduct = () => {
     const name = productNameInput.value.charAt(0).toUpperCase() + productNameInput.value.slice(1).toLowerCase();
     const price = parseFloat(productPriceInput.value);
     const quantity = parseInt(productQuantityInput.value, 10);
+    const nameError = document.getElementById("name-error");
+    const priceError = document.getElementById("price-error");
+    const quantityError = document.getElementById("quantity-error");
+    const existingError = document.getElementById("existing-error");
 
-    if (!name || isNaN(price) || isNaN(quantity) || price < 0 || quantity < 0) {
-        alert("Veuillez saisir des valeurs valides pour le produit.");
+    if (!name) {
+        nameError.textContent = "Veuillez saisir un nom valide pour le produit.";
         return;
+    } else {
+        nameError.textContent = "";
+    } 
+
+    if (isNaN(price) || price < 0) {
+        priceError.textContent = "Veuillez saisir un prix valide pour le produit.";
+        return;
+    } else {
+        priceError.textContent = "";
+    }
+
+    if (isNaN(quantity) || quantity < 0) {
+        quantityError.textContent = "Veuillez saisir une quantité valide pour le produit.";
+        return;
+    } else {
+        quantityError.textContent = "";
     }
 
     const existingProduct = products.find(product => product.name.toLowerCase() === name.toLowerCase());
 
     if (existingProduct) {
-        alert("Le produit existe déjà dans la liste de courses.");
+        existingError.textContent = "Le produit existe déjà dans la liste de courses.";
+        return;
     } else {
         products.push({ name, price, quantity });
+        existingError.textContent = "";
     }
 
     displayProducts();
     productNameInput.value = "";
     productPriceInput.value = "";
     productQuantityInput.value = "";
+
 }
 
 addProductButton.addEventListener("click", addProduct);
 
 displayProducts();
-
-

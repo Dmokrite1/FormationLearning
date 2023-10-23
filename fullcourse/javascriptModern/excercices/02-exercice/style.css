@@ -43,6 +43,8 @@ h1{
 .list p{
     background-color: white;
     text-align: center;
+    margin-left: 60px;
+    width: max-content;
 }
 
 .addProduct h2{
@@ -92,4 +94,32 @@ h1{
     text-align: center;
     border: none;
     background-color: red;
+}
+
+#name-error{
+    margin-bottom: 15px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+#price-error{
+    margin-bottom: 15px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+#quantity-error{
+    margin-bottom: 15px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+#existing-error{
+    margin-bottom: 15px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 2px;
 }
