@@ -24,9 +24,9 @@ const calculateTotalPrice = () => {
 
 const displayProducts = () => {
     productList.innerHTML = "";
-
+    
     products.sort((a, b) => a.price - b.price);
-
+    
     products.map((product) => {
         const listItem = document.createElement('li');
         listItem.textContent = `${product.name} - Prix : ${product.price} €, Quantité : ${product.quantity}`;
@@ -81,7 +81,6 @@ const addProduct = () => {
     productNameInput.value = "";
     productPriceInput.value = "";
     productQuantityInput.value = "";
-
 }
 
 addProductButton.addEventListener("click", addProduct);
