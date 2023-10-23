@@ -67,7 +67,12 @@ const addProduct = () => {
         quantityError.textContent = "";
     }
 
-    const existingProduct = products.find(product => product.name.toLowerCase() === name.toLowerCase());
+    /*
+    *D'autres manières de faire (.some = True or False) ou .find pour recherché un élément ou .filter pour recherché plusieurs résultats
+    /const existingProduct = products.find(product => product.name.toLowerCase() === name.toLowerCase());
+    */
+    
+    const existingProduct = products.some(product => product.name.toLowerCase() === name.toLowerCase());
 
     if (existingProduct) {
         existingError.textContent = "Le produit existe déjà dans la liste de courses.";
