@@ -97,14 +97,14 @@ console.log(convertCurrency(1));
 const {usd : dollar} = convertCurrency(15);
 console.log('convertCurrency', dollar);
 
-const {gbp : euro, yen} = convertCurrency(25);
-console.log('convertion :', euro, 'euro', 'font', yen, 'yen');
+const {euro, yen} = convertCurrency(3);
+console.log('convertion :', euro, 'eur', 'font', yen, 'yen');
 
 //destructuré dans l'argument d'une function
 const formation = {
     name: 'backend',
     description: 'formation de développeur',
-    students: ["amand", "steve"]
+    students: ["Amand", "Steve"]
 };
 
 const getStudents = ({students, name, description : desc})=>{
@@ -112,3 +112,49 @@ const getStudents = ({students, name, description : desc})=>{
 }
 
 console.log(getStudents(formation));
+
+/*
+*rest operator
+/l'opérateur de repos et représenté par ... il permet de rassembler les élements restant d'un objet ou d'un tableau
+*/
+
+const team = ["Gilles", "Stéphane", "Vincent", "Amaury", "Romain", "Sébastian"];
+
+const [boss, support, ...employes] = team;
+console.log(boss);
+console.log(support);
+console.log(employes);
+
+//exemple avec une function
+const vatCalculator = (vat, ...montants) => {
+    return montants.map(montant => montant*vat)
+};
+console.log(vatCalculator(0.5, 186, 18, 20, 200, 3));
+
+//sur l'objet
+const user1 = {
+    firstName: 'Sacha',
+    age1: '30',
+    job: 'pokémon',
+    bestfriend: 'Patrick'
+}
+
+const {firstName, age1, ...rest} = user1;
+console.log((`${firstName} à ${age1} et est un ${rest.job}. il va souvent avec son meilleur ami, ${rest.bestfriend} fumé des chichas`));
+
+/*
+*exercice
+/avec la destructuration créé 3 variables: menu(qui correspond a name), size et sauce
+/faites le aussi avec les sauces
+*/
+const mcDo = {
+    name: "CBO (chicken bacon onion",
+    size: "large",
+    sauce: ["andalouse", "mayo", "ketchup"]
+}
+
+const {name: menu, size: taille, sauce: sauces} = mcDo;
+console.log(`Menu : ${menu}, Taille : ${taille}, Sauces : ${sauces.join(', ')}`);
+
+const [sauce1, sauce2, sauce3] = sauces
+console.log(`Sauce 1 : ${sauce1}, Sauce 2 : ${sauce2}, Sauce 3 : ${sauce3}`);
