@@ -68,7 +68,8 @@ const user1 = {
 const jacky = {
     ...user1,
     address: {
-        ...address
+        ...address, cp: 95210
     }
-}
+};
 console.log(jacky);
+
