@@ -17,9 +17,8 @@ let list = {
     
  /*   
     subTotal: ()=>{
-        return Object.values(list.products).flatMap(productType=>{
-            console.log(productType);
-        })
+        return Object.values(list.products).flatMap(productType=> product.map(product=> (product.price*product.quantity).toFixed(2)
+        ))
     }
 */
 
