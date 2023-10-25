@@ -14,9 +14,14 @@ let list = {
             {product : 'orangina', price : 2.25, quantity: 3},
         ],
     },
+    
+ /*   
     subTotal: ()=>{
-        return Object.values(list.products)
+        return Object.values(list.products).flatMap(productType=>{
+            console.log(productType);
+        })
     }
+*/
 
 };
 
