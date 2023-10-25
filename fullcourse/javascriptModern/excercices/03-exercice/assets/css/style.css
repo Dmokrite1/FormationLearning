@@ -1,0 +1,12 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+.block th {
+    @apply px-3 bg-slate-300
+}
+.block td{
+    @apply bg-slate-100 px-5 text-center w-80
+}
+
