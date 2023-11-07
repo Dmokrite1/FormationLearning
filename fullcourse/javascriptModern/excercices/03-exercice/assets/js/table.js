@@ -42,6 +42,7 @@ class Table {
             this.products[productType].splice(productIndex, 1);
         }
     }
+
 }
 
 export default Table;

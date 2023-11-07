@@ -29,6 +29,7 @@ h1 {
 
 .options button{
     height: max-content;
+    border-radius: 20px;
 }
 
 .option {
