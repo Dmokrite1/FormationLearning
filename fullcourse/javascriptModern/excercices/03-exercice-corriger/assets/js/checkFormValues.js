@@ -5,8 +5,10 @@ export const checkFormValues = (newProduct) => {
     const value = newProduct.get(ressource);
     return errorTest(value, `.${ressource}-error`, ressource);
   });
-  if (values.some((v) => v === undefined)) {
-    return;
+  const isOk= values.some((v) => v === undefined)
+  console.log(isOk)
+  if (isOk) {
+    return this.checkFormValues(newProduct);
   }
 };
 
