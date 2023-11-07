@@ -1,5 +1,3 @@
-import { de } from 'date-fns/locale';
-
 export default function (shoppingList) {
   let category = document.getElementById('category');
   const categories = Object.keys(shoppingList.products);
