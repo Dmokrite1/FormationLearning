@@ -1,5 +1,5 @@
-import Table from './assets/js/table';
-import UI from './assets/js/userInterface';
+import Table from './table';
+import UI from './userInterface';
 
 class ShoppingList {
     constructor(listData) {
