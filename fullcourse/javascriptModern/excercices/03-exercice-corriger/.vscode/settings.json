@@ -1,0 +1,13 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "css.validate": false,
+  "editor.formatOnPaste": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "css.customData": [".vscode/tailwind.json"],
+  "tailwindCSS.lint.invalidApply": "ignore",
+  "postcss.lint.no-unknown": true,
+  "css.lint.unknownAtRules": "ignore",
+}

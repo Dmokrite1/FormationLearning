@@ -1,0 +1,86 @@
+@import "normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Lexend&family=Montserrat&display=swap');
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+body{
+    font-family: montserrat;
+    @apply bg-slate-100; 
+}
+
+.listing{
+    @apply w-full m-0 p-0 flex flex-col items-center justify-center;    
+}
+
+.btn-delete{
+    @apply text-red-500 bg-transparent w-full hover:bg-red-600 hover:text-red-100 active:bg-red-600 font-bold uppercase px-4 py-3 rounded outline-none focus:outline-none  ease-linear transition-all duration-150; 
+}
+
+.btn-danger{
+    @apply text-white bg-red-500 w-fit hover:bg-red-600 hover:text-red-100 active:bg-red-600 font-bold uppercase px-4 py-3 rounded outline-none focus:outline-none  ease-linear transition-all duration-150; 
+}
+.btn-primary{
+    @apply text-white bg-green-500 w-fit hover:bg-green-600 hover:text-green-100 active:bg-white font-bold uppercase px-4 py-3 rounded outline-none focus:outline-none  ease-linear transition-all duration-150; 
+}
+
+.shopping-list{
+    @apply w-11/12 shadow-lg;
+}
+
+.thead tr th, 
+.thead .trhead
+{
+    @apply bg-slate-300 py-4 ;
+}
+.tbody{
+    @apply w-full bg-slate-100 text-center;
+}
+
+.tbody tr:nth-child(even){
+    @apply bg-slate-200;
+}
+
+.title, 
+.title-modal{
+    @apply text-3xl text-purple-800 font-bold text-center mt-8 mb-8;
+}
+
+.total{
+    @apply w-8/12 text-xl text-purple-800 font-bold text-right pr-5 pt-4;
+}
+
+.modal>div
+{
+    @apply flex flex-col items-center justify-center absolute top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50;
+}
+
+.form-modal{
+    @apply absolute w-2/3 h-2/5 bg-white rounded-lg shadow-lg flex flex-col;
+}
+
+input,
+.modal-content div select
+{
+    @apply bg-slate-50 border-2 border-purple-800 rounded-lg w-1/2 h-10 pl-4 shadow-md shadow-gray-400;
+}
+
+.modal-content div{
+    @apply mt-4 text-left w-full flex flex-row items-center justify-center;
+}
+
+.modal-content div label{
+    @apply w-1/4 text-xl font-bold text-left;
+}
+
+.modal-footer{
+    @apply w-full mt-12 flex flex-row items-end justify-around;
+}
+
+.btnOpenCategory{
+    @apply mt-8;
+}
+
+.error{
+    @apply text-red-500 text-sm text-center w-full;
+}
