@@ -1,5 +1,5 @@
 let faviconElem = document.getElementById("favicon");
-faviconElem.setAttribute("href", `IMG/Favicons/favicon${Math.floor(5 * Math.random()) + 1}.ico`);
+faviconElem.setAttribute("href", `IMG/favicon${Math.floor(5 * Math.random()) + 1}.ico`);
 
 const choices = document.querySelectorAll(".RPSLS > div");
 const score = document.getElementById("score");
@@ -12,12 +12,12 @@ const scoreboard = {
   computer: 0
 };
 
-let playerChoice = ""; // Initialize player's choice
+let playerChoice = "";
 
 function play(e) {
   console.log("e ", e);
   restart.style.display = "table";
-  playerChoice = e.target.parentElement.parentElement.id; // Set the player's choice
+  playerChoice = e.target.parentElement.parentElement.id;
   const computerChoice = getComputerChoice();
   const svg = e.target.parentElement;
   const winner = getWinner(playerChoice, computerChoice);
