@@ -2,18 +2,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-.flex {
-    display: flex;
+body {
+    background-color: aquamarine;
 }
 
-.justify-between {
-    justify-content: space-between;
-}
-
-.mt-1 {
-    margin-top: 0.25rem;
-}
-
-.text-red-600 {
-    color: #dc2626; /* Couleur correspondant à la classe text-red-600 de Tailwind CSS */
+main-header {
+    background-color: aqua;
 }
