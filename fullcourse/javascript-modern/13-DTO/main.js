@@ -39,6 +39,6 @@ class UserDTO{
 
 const user = new User("John", "Doe", 18, "asterix@obelix.com", "github.io", 1234);
 const address = new Address("rue haute", 12, 1, 72500, "Anywhere", "Somwhere");
-const userDTO = new UserDTO(user, address);
+const userDto = new UserDTO(user, address);
 
-console.log(userDTO);
+console.log(userDto);
