@@ -27,6 +27,7 @@
     }
   },
   "dependencies": {
+    "coverage": "^0.4.1",
     "jsdom": "^22.1.0"
   }
 }
