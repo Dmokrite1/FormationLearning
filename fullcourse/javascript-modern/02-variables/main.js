@@ -42,4 +42,3 @@ texte = 'elle est ou la poulette'
 console.log(texte)
 
 //team.push('marie')  Erreur à cout sur car la variable est dans la function
-
