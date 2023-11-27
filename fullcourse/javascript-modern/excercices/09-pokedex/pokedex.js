@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const commentTextArea = document.createElement('textarea');
-        commentTextArea.placeholder = 'Laissez un commentaire...';
+        commentTextArea.placeholder = 'Laissez un commentaire et cliquez sur Favoris pour ajouté';
         modalContentElement.appendChild(commentTextArea);
 
         // Crée et ajoute les boutons pour ajouter aux favoris et retirer de la liste
