@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="header-component.css">
+    <script src="pokedex.js" defer></script>
+    <script type="module" src="./components/header-component.js" defer></script>
+    <script type="module" src="./components/footer-component.js" defer></script>
+    <title>Pokédex</title>
+</head>
+
+<body>
+    <header-component></header-component>
+    <div id="caught-pokemons-container"></div>
+    <div id="pokemon-modal" class="modal">
+        <div class="modalContent">
+            <button class="close-modal">&times;</button>
+            <div id="pokemon-modal-content">
+                <p id="modal-id"></p>
+                <img id="modal-sprite" alt="Sprite du Pokémon">
+                <p id="modal-name"></p>
+                <p id="modal-type"></p>
+                <p id="modal-stats"></p>
+                <button id="add-to-favorites">Ajouter aux favoris</button>
+                <button id="remove-from-list">Retirer de la liste</button>
+            </div>
+        </div>
+    </div>
+    <footer-component></footer-component>
+</body>
+</html>

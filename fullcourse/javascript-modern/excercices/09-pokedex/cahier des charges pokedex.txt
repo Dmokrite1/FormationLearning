@@ -1,0 +1,11 @@
+afficher une liste aléatoire de 50 (pagination) pokemons ( Id, Nom, Types )via l'API https://pokebuildapi.fr/api/v1
+au clic une modal s'ouvre
+Possibilité de faire un combat pour la capture ( lancer du dé 20, si résultat supérieur à Vitesse du pokémon / 10 --> Capture Réussie !
+Si Capture alors il rentre dans le Deck/Equipe, affichage sous forme de cards , on peut à ce stade cliquer voir les stats "complètes"/descriptif du pokemon ou choisir de le libérer
+Deck trié par Id
+en LocalStorage mettre un historique qui peut voir la capture ( réussie et ratées ) et la libération
+NavBar : Liste , Deck, Historique, ( en haut à droit : nombre de captures réussies / nombre de captures ratées )
+En bonus : 
+Si 10 pokemons capturés alors jet de dés 20+1
+Si 20 pokemons capturés alors jet de dés 20+2
+si 40 pokemons capturés alors jet de dés 20+3
