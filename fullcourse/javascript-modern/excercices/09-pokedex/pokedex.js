@@ -50,10 +50,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const commentTextArea = document.createElement('textarea');
-        commentTextArea.placeholder = 'Laissez un commentaire et cliquez sur Favoris pour ajouté';
+        commentTextArea.placeholder = 'Laissez un commentaire...';
         modalContentElement.appendChild(commentTextArea);
 
-        // Crée et ajoute les boutons pour ajouter aux favoris et retirer de la liste
+        // Crée et ajoute les boutons pour ajouter aux favoris, retirer et ajouter un commentaire à un pokémon de la liste
         const addFavoriteButton = document.createElement('button');
         addFavoriteButton.textContent = 'Ajouter aux favoris';
         addFavoriteButton.addEventListener('click', () => {
@@ -68,10 +68,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         modalContentElement.appendChild(removeCaughtButton);
 
+        const addCommentButton = document.createElement('button');
+        addCommentButton.textContent = 'Ajouter un commentaire';
+        addCommentButton.addEventListener('click', () => {
+            addCommentToFavorites(pokemon, commentTextArea);
+        });
+        modalContentElement.appendChild(addCommentButton);
+
         // Affiche la modal
         modalElement.style.display = 'block';
     }
 
+    function addCommentToFavorites(pokemon, commentTextArea) {
+        const comment = commentTextArea.value;
+    
+        // Vérifie si le commentaire est renseigné
+        if (!comment) {
+            alert("Veuillez ajouter un commentaire avant de valider.");
+            return;
+        }
+    
+        // Ajouter le Pokémon aux favoris avec le commentaire
+        const favorites = JSON.parse(localStorage.getItem("favoritePokemons")) || [];
+        const pokemonWithComment = { ...pokemon, comment: comment };
+        favorites.push(pokemonWithComment);
+        localStorage.setItem("favoritePokemons", JSON.stringify(favorites));
+    
+        // Affiche une alerte pour informer l'utilisateur
+        alert(`Le Pokémon ${pokemon.name} a été ajouté aux favoris avec le commentaire : ${comment}`);
+    
+        // Ferme la modal après l'ajout du commentaire
+        modalElement.style.display = 'none';
+    }
+    
     // Fonction pour afficher les Pokémon attrapés dans des cartes
     function displayCaughtPokemonsInCards() {
         // Vérifie si l'élément du conteneur existe dans le DOM
@@ -159,7 +188,6 @@ document.addEventListener('DOMContentLoaded', function() {
         alert(`Le Pokémon ${pokemon.name} a été ajouté aux favoris avec le commentaire : ${comment}`);
     }
 
-    
     // Fonction pour retirer un Pokémon de la liste des Pokémon attrapés
     function removeFromCaughtList(pokemon) {
         // Vérifie si le Pokédex est plein
