@@ -12,9 +12,17 @@ let currentPokemonIndex;
 
 // Événement DOMContentLoaded pour lancer le jeu une fois que le DOM est chargé
 document.addEventListener('DOMContentLoaded', async () => {
+  // Afficher le loader au début du chargement
+  document.getElementById('loader').style.display = 'flex';
+
   // Initialisation des Pokémon et mise à jour des compteurs
   initialPokemons = await getRandomPokemons();
   remainingPokemons = [...initialPokemons];
+
+  // Cacher le loader une fois le chargement terminé
+  document.getElementById('loader').style.display = 'none';
+  // Afficher le contenu principal
+  document.getElementById('content').style.display = 'block';
 
   capturedCount = localStorage.getItem('capturedCount') || 0;
   missedCount = localStorage.getItem('missedCount') || 0;
