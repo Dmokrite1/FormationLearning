@@ -61,7 +61,7 @@ async function getRandomPokemons() {
   return randomPokemons;
 }
 
-// Fonction pour formater les types d'un Pokémon
+// Fonction pour récupèrer les objets dans un tableau qui se trouve dans un objet (Types d'un Pokémon) 
 function formatTypes(pokemon) {
   const apiTypes = pokemon.apiTypes;
 
