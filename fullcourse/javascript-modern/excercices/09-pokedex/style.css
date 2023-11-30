@@ -29,24 +29,40 @@ nav a.active {
   overflow: hidden;
 }
 
-#refreshAPI{
-  background-color: greenyellow;
-  margin-top: 1%;
-  height: 50px;
-  border-radius: 5px;
-  width: 200px;
-  white-space: nowrap;
-  animation: slideFromLeft 20s linear infinite;
+#button button {
+  border: none;
+  padding: 0;
+  background: none;
+  width: 200%;
 }
 
-@keyframes slideFromLeft{
+#refreshAPI {
+  margin-top: 1%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden; 
+}
+
+#refreshAPI img {
+  width: 50px;
+  cursor: pointer;
+  animation: slideFromLeft 15s linear infinite;
+}
+
+#refreshAPI h2{
+  margin-right: 1400px;
+  color: white;
+}
+
+@keyframes slideFromLeft {
   0% {
-      transform: translateX(-100%);
+    transform: translateX(-2700%);
   }
   100% {
-      transform: translateX(1000%);
+    transform: translateX(0%);
   }
 }
+
 
 #counter-container{
   display: flex;
