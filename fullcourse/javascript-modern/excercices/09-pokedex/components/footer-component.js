@@ -9,31 +9,6 @@ class FooterComponent extends HTMLElement {
     connectedCallback(){
                 // Définissez le contenu HTML et CSS du composant
                 this.shadowRoot.innerHTML = `
-                <style>
-                    div {
-                        /* Styles pour la première div */
-                    }
-    
-                    img {
-                        height: 50px;
-                    }
-    
-                    .user-cards {
-                        display: flex;
-                        margin-left: 200px;
-                    }
-                      
-                    .user-card {
-                        margin: 0 10px;
-                        padding: 10px;
-                        border: 1px solid #ccc;
-                        border-radius: 5px;
-                        text-align: center;
-                        background-color: #fff;
-                        color: #333;
-                        margin-left: 250px;
-                    }
-                </style>
                 <div>
                     <img src="./img/pok.jpg" alt="Logo">
                 </div>
