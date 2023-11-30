@@ -278,11 +278,6 @@ footer-component{
   width: 100%;
 }
 
-footer-component img{
-  height: 50px;
-  margin-right: 10px;
-}
-
 .user-cards {
   display: flex;
   margin-left: 200px;
@@ -296,5 +291,11 @@ footer-component img{
   text-align: center;
   background-color: #fff;
   color: #333;
-  margin-left: 250px;
+  margin-left: 160px;
+}
+
+.footer-img {
+  height: 70px;
+  width: 150px;
+  margin-right: 10px;
 }
