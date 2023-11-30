@@ -12,6 +12,7 @@ let currentPokemonIndex;
 
 // Événement DOMContentLoaded pour lancer le jeu une fois que le DOM est chargé
 document.addEventListener('DOMContentLoaded', async () => {
+
   // Afficher le loader au début du chargement
   document.getElementById('loader').style.display = 'flex';
 
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Cacher le loader une fois le chargement terminé
   document.getElementById('loader').style.display = 'none';
+
   // Afficher le contenu principal
   document.getElementById('content').style.display = 'block';
 
@@ -141,7 +143,7 @@ function openModal(pokemon) {
   currentPokemonIndex = remainingPokemons.findIndex(p => p.id === pokemon.id);
   const modal = document.getElementById('modal');
   const modalContent = document.getElementById('pokemon-details');
-
+  
   // Crée un élément img pour afficher l'image du sprite
   const spriteImage = document.createElement('img');
   spriteImage.src = pokemon.sprite;
