@@ -254,7 +254,7 @@ function addMissedPokemon() {
       localStorage.setItem('missedPokemons', JSON.stringify(storedMissedPokemons));
 
       // Ajoute l'événement raté dans l'historique
-      addToEventHistory(`Raté(e) le : ${new Date().toLocaleString()} ${missedPokemon.name}`);
+      addToEventHistory(`Raté(e) le : ${new Date().toLocaleString('fr-FR')} ${missedPokemon.name}`);
 
       console.log('Pokémon raté :', missedPokemon);
       console.log('missedPokemons:', storedMissedPokemons);
