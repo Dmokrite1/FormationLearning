@@ -157,6 +157,7 @@ try {
 }
 */
 
+/*
 const addition = (args: any): number => args.reduce((acc: any, curr: any) => Number(acc) + Number(curr));
 
 //const addition = (args: any): number => args.reduce((acc: any, curr: any) => ~~acc - ~~curr);
@@ -170,3 +171,24 @@ try {
 } catch (erreur: any) {
     console.error(erreur.message);
 }
+*/
+
+const calculate = (args: any[], operation: string): number =>
+  args.reduce((acc: number, curr: number) =>
+    operation === 'addition' ? ~~acc + ~~curr :
+    operation === 'subtraction' ? ~~acc - ~~curr :
+    operation === 'multiplication' ? ~~acc * ~~curr :
+    operation === 'division' ? ~~acc / ~~curr :
+    acc
+  );
+
+// Exemples d'utilisation
+const additionResult = calculate([2, 3, 4], 'addition');
+const subtractionResult = calculate([10, 5, 2], 'subtraction');
+const multiplicationResult = calculate([2, 3, 4], 'multiplication');
+const divisionResult = calculate([20, 2, 2], 'division');
+
+console.log('Addition:', additionResult); // Output: 9
+console.log('Subtraction:', subtractionResult); // Output: 3
+console.log('Multiplication:', multiplicationResult); // Output: 24
+console.log('Division:', divisionResult); // Output: 5
