@@ -1,14 +1,14 @@
 const { reverseWords } = require('./reverse.js');
 const colors = require('colors')
 
-import('./SpongeBobCase.mjs').then((spongebobModule) => {
+import('./spongeBob.mjs').then((spongebobModule) => {
   const { toSpongebob } = spongebobModule;
 
   const String = "Qui vit dans un ananas dans la mer? BOB L'éponge Carré !!";
   const spongebobCaseString = toSpongebob(String);
-  console.log(`Spongebob Case: ${spongebobCaseString}`.random);
+  console.log(`${spongebobCaseString}`.random);
 
-  const Array = ['banane', 'cerise', 'Prune', 'JCVD'];
+  const Array = ['banane', 'cerise', 'prune', 'JCVD'];
   const reversedArray = reverseWords(Array);
-  console.log(`Reversed Words: ${JSON.stringify(reversedArray)}`.rainbow);
+  console.log(`${JSON.stringify(reversedArray)}`.rainbow);
 });
