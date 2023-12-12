@@ -20,6 +20,7 @@ async function execute() {
 }
 */
 
+/*
 const { Image } = require('image-js');
 
 execute().catch(console.error);
@@ -32,3 +33,5 @@ async function execute() {
     .sobelFilter(5)
   return grey.save('Rom1.png');
 }
+*/
+
