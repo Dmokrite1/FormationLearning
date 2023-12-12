@@ -1,6 +1,7 @@
 const { log } = require('console');
 const util = require ('util');
 
+/*
 console.log(util.types.isDate(new Date()));
 console.log(util.types.isDate(123));
 console.log(util.format("%s a %d ans aujourd'hui", "Romain", 11));
@@ -9,6 +10,7 @@ console.log(util.isDeepStrictEqual({
 },{
     b: 2,
 }));
+*/
 
 /*
 *Exercice
@@ -22,3 +24,4 @@ for (country in countries) {
     console.log(util.format("En %s la TVA est de %d %", country, countries[country]));
 }
 */
+
