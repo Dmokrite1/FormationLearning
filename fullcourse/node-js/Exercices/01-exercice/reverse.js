@@ -1,4 +1,4 @@
-function reverseWords(array) {
+async function reverseWords(array) {
     return array.map((word) => word.split('').reverse().join(''));
 }
   
