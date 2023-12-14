@@ -68,6 +68,7 @@ countdown();  // Commence le compte à rebours explosif.
 startGame();  // Que le jeu commence.
 
 /*
+* Version en utilisant readline pour créer une interface user (input, output) servant de prompt pour entrer le mot de passe
 import { EventEmitter } from "stream";
 import readline from 'readline';
 
