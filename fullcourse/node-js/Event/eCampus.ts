@@ -14,7 +14,7 @@ const correctPassword = 'campus';
 
 // Fonction pour commencer le jeu (ou déclencher la mèche).
 function startGame() {
-    let count = 10;  // Compte à rebours initial.
+    let count = 5;  // Compte à rebours initial.
 
 // Fonction interne pour le compte à rebours, parce que les bombes aiment la dramaturgie.
 function countdown() {
