@@ -1,35 +1,73 @@
-/*
+// Importe le pouvoir explosif de "events".
 import { EventEmitter } from "events";
 
-const eCampus = new EventEmitter();
-let count = 10;
+// Définit une interface Bomb qui a le potentiel d'exploser et peut émettre des événements.
+interface Bomb extends EventEmitter {
+    password?: string;  // La clé secrète qui désamorce la bombe (ou pas).
+}
 
+// Crée une bombe (ou plutôt une mèche) en tant qu'instance d'EventEmitter.
+const bomb: Bomb = new EventEmitter();
+
+// Le mot de passe correct pour sauver le monde (campus).
+const correctPassword = 'campus';
+
+// Fonction pour commencer le jeu (ou déclencher la mèche).
+function startGame() {
+    let count = 10;  // Compte à rebours initial.
+
+// Fonction interne pour le compte à rebours, parce que les bombes aiment la dramaturgie.
 function countdown() {
     const startCountdown = setInterval(() => {
-        console.log(`Décompte: ${countdown}s`);
+        console.log(`Décompte: ${count}s`);
         count--;
 
         if (count === 0) {
             clearInterval(startCountdown);
-            eCampus.emit('password');
+            promptPassword();  // C'est l'heure de saisir le mot de passe !
         }
     }, 1000);
 }
 
-eCampus.on('password', () => {
-    const correctPassword = 'campus'
-    const testPassword = 'campus'
+// Fonction pour saisir le mot de passe (ou la dernière chance avant l'explosion).
+function promptPassword() {
+    process.stdin.once('data', (input) => {
+        const enteredPassword = input.toString().trim();
+        bomb.password = enteredPassword;
+        bomb.emit('password');  // Émet l'événement 'password' comme une bombe prête à exploser.
+    });
 
-    if (testPassword === correctPassword) {
+    console.log("Entrez le mot de passe : ");
+}
+
+// Écoute l'événement 'password' comme un expert en désamorçage.
+bomb.on('password', () => {
+    if (bomb.password === correctPassword) {
         console.log("Félicitations !! Vous avez sauvé l'E-Campus");
     }else{
         console.log("Mauvais password !! So long everybody");
     }
+
+    process.stdin.once('data', (input) => {
+        const playAgain = input.toString().trim().toLowerCase();
+        if (playAgain === 'oui') {
+            startGame();  // La partie est-elle prête à être rejouée ?
+        }else{
+            console.log("Au revoir !");
+            process.exit();  // Adieu, cruelle réalité.
+        }
+    });
+
+    console.log("Voulez-vous rejouer ? (oui/non) : ");
 })
 
-countdown();
-*/
+countdown();  // Commence le compte à rebours explosif.
 
+}
+
+startGame();  // Que le jeu commence.
+
+/*
 import { EventEmitter } from "stream";
 import readline from 'readline';
 
@@ -81,6 +119,7 @@ eCampus.on('passwordCorrect', () => {
 eCampus.on('passwordIncorrect', () => {
     console.log("Mauvais password !! So long everybody");
 });
+*/
 
 /*
 * Version formateur
