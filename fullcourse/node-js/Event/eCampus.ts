@@ -82,8 +82,8 @@ eCampus.on('passwordIncorrect', () => {
     console.log("Mauvais password !! So long everybody");
 });
 
-
 /*
+* Version formateur
 import { EventEmitter } from "stream";
 
 const bombPassword = 'bomb';
