@@ -9,6 +9,8 @@ readdir('./', {
 })
 */
 
+/*
+* Ma version
 async function displayFolder() {
     try {
         const result = await readdir('./', { withFileTypes: true });
@@ -24,3 +26,14 @@ async function displayFolder() {
 }
 
 displayFolder();
+*/
+
+/*
+* Version corrigé formateur
+*/
+readdir('./', {
+    withFileTypes: true
+}).then(dirents => {
+    const filteredDirents = dirents.filter(item => item.isDirectory());
+    console.log(filteredDirents.map(dirent => dirent.name));
+})
