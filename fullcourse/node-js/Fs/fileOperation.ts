@@ -27,54 +27,69 @@ main()
 */
 
 /*
-import { promises as fsPromises, existsSync} from "fs";
-import { resolve } from 'path';
-import { mkdir, appendFile, rmdir } from "fs/promises"
+* V1
+*/
 
-async function createLogDir(): Promise<void> {
-   const currentDate = new Date();
-   const year = currentDate.getFullYear().toString();
-   const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
-   const day = currentDate.getDate().toString().padStart(2, '0');
 
-   const logDirectory = resolve(__dirname, 'logs', year, month, day);
+import { mkdir, rmdir, writeFile, unlink, readdir } from "fs/promises";
+import { join } from "path";
 
-   if(!existsSync(logDirectory)) {
-    await mkdir(logDirectory, { recursive: true });
-   }
+const sleep = (ms: number) => new Promise((res, rej) => setTimeout(res, ms));
+
+async function log(message: string) {
+  const currentDate = new Date();
+  const year = currentDate.getFullYear().toString();
+  const month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
+  const day = currentDate.getDate().toString().padStart(2, "0");
+
+  const logPath = join("logs", year, month, day);
+  const filePath = join(logPath, "09.log");
+
+  try {
+    await mkdir(logPath, { recursive: true });
+    console.log("Arborescence créée !");
+
+    await sleep(2000);
+
+    await writeFile(filePath, message);
+    console.log("Message ajouté au fichier !");
+  } catch (error) {
+    console.error("Une erreur s'est produite :", error);
+  }
 }
 
-async function writeLog(message: string): Promise<void> {
-    await createLogDir();
+async function removeTodayLogs() {
+  const currentDate = new Date();
+  const year = currentDate.getFullYear().toString();
+  const month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
+  const day = currentDate.getDate().toString().padStart(2, "0");
 
-    const currentDate = new Date();
-    const year = currentDate.getFullYear().toString();
-    const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
-    const day = currentDate.getDate().toString().padStart(2, '0');
+  const logPath = join("logs", year, month, day);
 
-    const logDirectory = resolve(__dirname, 'logs', year, month, day);
-    const logFileName = resolve(logDirectory, `${currentDate.getHours()}.log`);
-
-    await appendFile(logFileName, `${message}\n`, 'utf8');
-}
-
-async function clearLogsForToday(): Promise<void> {
-    const currentDate = new Date();
-    const year = currentDate.getFullYear().toString();
-    const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
-    const day = currentDate.getDate().toString().padStart(2, '0');
-    const logDirectory = resolve(__dirname, 'logs', year, month, day);
-
-    try {
-        await rmdir(logDirectory, { recursive: true });
-    } catch (error) {
-        console.error(`Erreur lors de la suppression des logs`);
+  try {
+    const entries = await readdir(logPath);
+    for (const entry of entries) {
+      const entryPath = join(logPath, entry);
+      await unlink(entryPath);
     }
+
+    await rmdir(logPath);
+    console.log("Logs de la journée supprimés !");
+  } catch (error) {
+    console.error("Une erreur s'est produite :", error);
+  }
 }
 
-export { writeLog, clearLogsForToday };
-*/
+async function main() {
+  try {
+    await log("Banane");
 
-/*
-* Version formateur
-*/
+    await sleep(2000);
+
+    await removeTodayLogs();
+  } catch (error) {
+    console.error("Une erreur s'est produite :", error);
+  }
+}
+
+main();
