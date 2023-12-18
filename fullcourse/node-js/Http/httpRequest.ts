@@ -4,7 +4,7 @@ import https from "https";
 const request = https.request({
     hostname: 'www.triptyk.eu',
     path: '/',
-    port: 443,
+    port: 443,  // port sécurisé en cas de http = port 80
     method: 'GET'
 }, (response) => {
     let output = "";
@@ -18,7 +18,7 @@ const request = https.request({
     })
 })
 
-request.end();
+request.end(); // sans appellé la method end la requete ne démarre pas
 */
 
 // Même chose qu'au dessus en plus simple avec le fetch
