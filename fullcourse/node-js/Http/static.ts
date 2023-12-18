@@ -30,7 +30,7 @@ const server = http.createServer(async (req, res) => {
         "content-type": extensionContentType[extension],
     });
 
-    // on commence avec un point parce que le request.url commence par un /
+    // Ici on commence avec un point parce que le request.url commence par un "/"
     const fileStream = await readFile(`.${req.url}`);
     
     res.end(fileStream);

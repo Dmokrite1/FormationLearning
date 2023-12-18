@@ -1,3 +1,7 @@
+body {
+    display: block;
+}
+
 h1 {
     color: rgb(0, 0, 0);
     background-color: rgb(247, 170, 55);
@@ -7,4 +11,5 @@ h1 {
 img {
     width: 350px;
     height: 400px;
+    align-items: center;
 }
