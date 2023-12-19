@@ -49,29 +49,21 @@ function help(req: http.IncomingMessage, res: http.ServerResponse) {
             <h3>This is a simple API with CRUD operations for activities and users.</h3>
             <h2>Activities:</h2>
             <h3>
-            Create: POST http://localhost:8001/activities = Invoke-RestMethod -Uri 'http://localhost:8001/activities' -Method POST -Headers @{"Content-Type"="application/json"} -Body '{"name": "Jogging", "description": "A morning run in the park."}'
-
-            Read: GET http://localhost:8001/activities = Invoke-RestMethod -Uri 'http://localhost:8001/activities' -Method GET
-
-            Update: PUT http://localhost:8001/activities/:id = Invoke-RestMethod -Uri 'http://localhost:8001/activities/{activityId}' -Method PUT -Headers @{"Content-Type"="application/json"} -Body '{"name": "Updated Activity", "description": "Updated description."}'
-
-            Delete: DELETE http://localhost:8001/activities/:id = Invoke-RestMethod -Uri 'http://localhost:8001/activities/{activityId}' -Method DELETE
-
+            Create: POST http://localhost:8001/activities;
+            Read: GET http://localhost:8001/activities;
+            Update: PUT http://localhost:8001/activities/:id;
+            Delete: DELETE http://localhost:8001/activities/:id;
             </h3>
             <h2>Users:</h2>
             <h3>
-            Create: POST http://localhost:8001/users = Invoke-RestMethod -Uri 'http://localhost:8001/users' -Method POST -Headers @{"Content-Type"="application/json"} -Body '{"username": "john_doe", "email": "john.doe@example.com"}'
-
-            Read: GET http://localhost:8001/users = Invoke-RestMethod -Uri 'http://localhost:8001/users' -Method GET
-
-            Update: PUT http://localhost:8001/users/:id = Invoke-RestMethod -Uri 'http://localhost:8001/users/{userId}' -Method PUT -Headers @{"Content-Type"="application/json"} -Body '{"username": "new_username", "email": "new.email@example.com"}'
-
-            Delete: DELETE http://localhost:8001/users/:id = Invoke-RestMethod -Uri 'http://localhost:8001/users/{userId}' -Method DELETE
-
+            Create: POST http://localhost:8001/users;
+            Read: GET http://localhost:8001/users;
+            Update: PUT http://localhost:8001/users/:id;
+            Delete: DELETE http://localhost:8001/users/:id;
             </h3>
             <h2>Help:</h2>
             <h3>
-            Help Page: GET http://localhost:8001/help
+            Help Page: GET http://localhost:8001/help;
             </h3>
         </body>
       </html>
